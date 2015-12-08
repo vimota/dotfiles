@@ -1,5 +1,23 @@
 [user]
-       name = James Hu
-       email = hello@james.hu
-[github]
-       user = axsuul
+	name = Victor Mota
+	email = vimota@gmail.com
+[alias]
+	co = checkout
+	s = status
+	ci = commit
+ 	st = status
+ 	br = branch
+ 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+ 	type = cat-file -t
+ 	dump = cat-file -p
+	up = "!git remote update -p; git merge --ff-only @{u}"
+[color]
+	ui = auto
+	ui = true
+[core]
+	editor = subl -w
+	autocrlf = false
+	safecrlf = true
+	quotepath = false
+[push]
+	default = tracking

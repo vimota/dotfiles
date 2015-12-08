@@ -1,0 +1,46 @@
+config defaultToCurrentScreen true
+# Shows app icons and background apps, spreads icons in the same place.
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
+
+bind e:cmd hint ASDFGHJKLQWERTYUIOPCVBN # use whatever keys you want
+
+alias browser 'Chrome'
+alias editor 'Sublime Text 2'
+
+
+# Abstract positions
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias tophalf move screenOriginX;screenOriginY screenSizeX;screenSizeY/2
+alias bottomhalf move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX;screenSizeY/2
+
+alias topleft corner top-left resize:screenSizeX/2;screenSizeY/2
+alias topright corner top-right resize:screenSizeX/2;screenSizeY/2
+alias bottomleft corner bottom-left resize:screenSizeX/2;screenSizeY/2
+alias bottomright corner bottom-right resize:screenSizeX/2;screenSizeY/2
+
+alias hyper ctrl;alt;cmd
+alias sub-hyper ctrl;alt
+
+# Location bindings
+bind left:${hyper} ${lefthalf}
+bind m:${hyper} ${full}
+bind right:${hyper} ${righthalf}
+bind up:${hyper} ${tophalf}
+bind down:${hyper} ${bottomhalf}
+
+bind right:${sub-hyper} throw next resize
+bind left:${sub-hyper} throw next resize
+
+# Focus Bindings
+#bind right:${hyper}    focus right
+#bind left:${hyper}     focus left
+#bind up:${hyper}       focus up
+#bind down:${hyper}     focus down
+
+bind i:${hyper} focus 'iTerm'
+bind e:${hyper} focus ${browser}
+bind u:${hyper} focus ${editor}

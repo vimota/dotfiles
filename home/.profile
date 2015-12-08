@@ -8,6 +8,8 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+export GOPATH=$HOME
+
 # If running zsh
 if [ -n "$ZSH_VERSION" ]; then
     . "$HOME/.zshrc"
