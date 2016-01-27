@@ -64,3 +64,6 @@ export VISUAL=/usr/local/bin/subl
 export EDITOR=/usr/local/bin/subl
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
