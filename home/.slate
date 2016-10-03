@@ -7,7 +7,7 @@ config windowHintsSpread true
 bind e:cmd hint ASDFGHJKLQWERTYUIOPCVBN # use whatever keys you want
 
 alias browser 'Chrome'
-alias editor 'Sublime Text 2'
+alias editor 'Sublime Text'
 
 
 # Abstract positions
@@ -16,6 +16,11 @@ alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
 alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
 alias tophalf move screenOriginX;screenOriginY screenSizeX;screenSizeY/2
 alias bottomhalf move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX;screenSizeY/2
+
+alias left2thirds move screenOriginX;screenOriginY screenSizeX*2/3;screenSizeY
+alias leftthird move screenOriginX;screenOriginY screenSizeX/3;screenSizeY
+alias right2thirds move screenOriginX+screenSizeX/3;screenOriginY screenSizeX*2/3;screenSizeY
+alias rightthird move screenOriginX+screenSizeX*2/3;screenOriginY screenSizeX/3;screenSizeY
 
 alias topleft corner top-left resize:screenSizeX/2;screenSizeY/2
 alias topright corner top-right resize:screenSizeX/2;screenSizeY/2
@@ -26,8 +31,13 @@ alias hyper ctrl;alt;cmd
 alias sub-hyper ctrl;alt
 
 # Location bindings
+# all of these are in qwerty since hyper key would kick me out of dvorak
 bind left:${hyper} ${lefthalf}
+bind b:${hyper} ${leftthird}
+bind n:${hyper} ${left2thirds}
 bind m:${hyper} ${full}
+bind ,:${hyper} ${right2thirds}
+bind .:${hyper} ${rightthird}
 bind right:${hyper} ${righthalf}
 bind up:${hyper} ${tophalf}
 bind down:${hyper} ${bottomhalf}
@@ -41,6 +51,6 @@ bind left:${sub-hyper} throw next resize
 #bind up:${hyper}       focus up
 #bind down:${hyper}     focus down
 
-bind i:${hyper} focus 'iTerm'
+bind i:${hyper} focus 'iTerm2'
 bind e:${hyper} focus ${browser}
 bind u:${hyper} focus ${editor}
