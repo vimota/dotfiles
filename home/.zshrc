@@ -6,6 +6,10 @@ COMPLETION_WAITING_DOTS="true"
 HYPHEN_INSENSITIVE="true"
 HIST_STAMPS="yyyy-mm-dd"
 plugins=(git docker kubectl node npm python tmux)
+# Disable the annoying autocorrect feature
+# # Must come after sourcing oh-my-zsh.sh
+unsetopt correct_all
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
