@@ -15,4 +15,4 @@ Use [homesick](https://github.com/technicalpickles/homesick) to install these do
     $ homesick symlink dotfiles
 
 ## vim
-`vim` uses the [solarized](https://github.com/altercation/solarized) color scheme. Please refer to their instructions are getting it to properly display in your terminal of choice.
+On the first run of vim, after sourcing, run `:PluginInstall`.
