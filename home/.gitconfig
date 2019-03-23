@@ -15,7 +15,7 @@
 	ui = auto
 	ui = true
 [core]
-	editor = subl -w
+	editor = vim
 	autocrlf = false
 	safecrlf = true
 	quotepath = false

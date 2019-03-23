@@ -1,2 +1,0 @@
-# Set up directory colors
-if which dircolors > /dev/null; then eval `dircolors ~/.dircolors/solarized.256dark`; fi
