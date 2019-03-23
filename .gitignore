@@ -2,3 +2,7 @@
 .svn
 *~
 .*.swp
+# Ignore everything in bundle dir, except Vundle.
+!home/.vim/bundle/
+home/.vim/bundle/*
+!home/.vim/bundle/Vundle.vim
