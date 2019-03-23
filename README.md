@@ -1,14 +1,13 @@
 # dotfiles 
-Gotta have my dotfiles! Plays nicely with: 
+Plays nicely with: 
 
 - git
 - vim
 - tmux
 - oh-my-zsh
-- rbenv
 
 # Installation
-Use [homesick](https://github.com/technicalpickles/homesick) to install these dotfiles. Yes, it requires [Ruby](http://ruby-lang.org)! Thankfully it works on `1.8.7` so you can still be an old tard.
+Use [homesick](https://github.com/technicalpickles/homesick) to install these dotfiles. Yes, it requires [Ruby](http://ruby-lang.org)! If running on a fresh machine, best to do `brew install ruby`, and update .zshrc's PATH if gem path if `brew info ruby` differs.
 
     $ gem install homesick
     $ homesick clone vimota/dotfiles
