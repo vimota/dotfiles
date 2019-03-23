@@ -28,8 +28,6 @@ set noshowmode
 set showmatch                   " show matching bracket
 set wildmenu                    " enhanced completion"
 
-colorscheme codedark
-
 imap jj <Esc>
 
 " Easier navigation between panes
@@ -91,6 +89,7 @@ Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 filetype plugin indent on
 
+colorscheme codedark
 """"""" NERD TREE/COMMENTER """"""
 
 " opens nerd tree if directory is opened

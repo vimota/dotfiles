@@ -1,6 +1,6 @@
-# ZSH Config 
+# ZSH Config
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="robbyrussell"
+ZSH_THEME="miloshadzic"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 HYPHEN_INSENSITIVE="true"
@@ -10,8 +10,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/usr/local/share/npm/bin/
-export PATH=$PATH:/usr/local/share/python
-
+export PATH=$PATH:/usr/local/share/python:/usr/local/lib/ruby/gems/2.6.0/bin
+export PATH=/usr/local/opt/ruby/bin:$PATH
 # Virtualenv and Virtualenvwrappe
 export WORKON_HOME=$HOME/.virtualenvs
 
