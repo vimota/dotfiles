@@ -12,7 +12,7 @@ Use [homesick](https://github.com/technicalpickles/homesick) to install these do
 
     $ gem install homesick
     $ homesick clone vimota/dotfiles
-    $ homesick symlink vimota/dotfiles
+    $ homesick symlink dotfiles
 
 ## vim
 `vim` uses the [solarized](https://github.com/altercation/solarized) color scheme. Please refer to their instructions are getting it to properly display in your terminal of choice.
