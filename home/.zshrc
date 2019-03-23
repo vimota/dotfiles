@@ -6,11 +6,11 @@ COMPLETION_WAITING_DOTS="true"
 HYPHEN_INSENSITIVE="true"
 HIST_STAMPS="yyyy-mm-dd"
 plugins=(git docker kubectl node npm python tmux)
+source $ZSH/oh-my-zsh.sh
 # Disable the annoying autocorrect feature
 # # Must come after sourcing oh-my-zsh.sh
 unsetopt correct_all
 
-source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/usr/local/share/npm/bin/
