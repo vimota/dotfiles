@@ -1,5 +1,5 @@
 # dotfiles
-Gotta have my dotfiles! Plays nicely with:
+Plays nicely with:
 
 - git
 - vim (contains vundle as a submodule)
@@ -7,11 +7,11 @@ Gotta have my dotfiles! Plays nicely with:
 - oh-my-zsh (contained as a submodule)
 
 # Installation
-Use [homesick](https://github.com/technicalpickles/homesick) to install these dotfiles. Yes, it requires [Ruby](http://ruby-lang.org)! Thankfully it works on `1.8.7` so you can still be an old tard.
+Use [homesick](https://github.com/technicalpickles/homesick) to install these dotfiles. Yes, it requires [Ruby](http://ruby-lang.org)! If running on a fresh machine, best to do `brew install ruby`, and update .zshrc's gem PATH if `brew info ruby` differs.
 
     $ gem install homesick
     $ homesick clone vimota/dotfiles
     $ homesick symlink dotfiles
 
 ## vim
-`vim` uses the [solarized](https://github.com/altercation/solarized) color scheme. Please refer to their instructions are getting it to properly display in your terminal of choice.
+On the first run of vim, after sourcing, run `:PluginInstall`.
