@@ -1,11 +1,10 @@
-# dotfiles 
-Gotta have my dotfiles! Plays nicely with: 
+# dotfiles
+Gotta have my dotfiles! Plays nicely with:
 
 - git
-- vim
+- vim (contains vundle as a submodule)
 - tmux
-- oh-my-zsh
-- rbenv
+- oh-my-zsh (contained as a submodule)
 
 # Installation
 Use [homesick](https://github.com/technicalpickles/homesick) to install these dotfiles. Yes, it requires [Ruby](http://ruby-lang.org)! Thankfully it works on `1.8.7` so you can still be an old tard.
