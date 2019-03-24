@@ -5,7 +5,7 @@ ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 HYPHEN_INSENSITIVE="true"
 HIST_STAMPS="yyyy-mm-dd"
-plugins=(git docker kubectl node npm python tmux)
+plugins=(git docker kubectl node npm python tmux autojump)
 source $ZSH/oh-my-zsh.sh
 # Disable the annoying autocorrect feature
 # # Must come after sourcing oh-my-zsh.sh
