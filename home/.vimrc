@@ -21,8 +21,7 @@ set cursorline
 set laststatus=2
 set term=screen-256color
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-" fixes backspace issues
-set backspace=indent,eol,start
+
 " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set noshowmode
 set showmatch                   " show matching bracket
@@ -68,9 +67,9 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-"Plugin 'pangloss/vim-javascript'
-"Plugin 'scrooloose/syntastic'
-"Plugin 'valloric/youcompleteme'
+Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/syntastic'
+" Plugin 'valloric/youcompleteme'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
@@ -149,3 +148,5 @@ let g:ycm_complete_in_comments = 1
 map ,g :YcmCompleter GoTo<CR>
 map ,b :YcmCompleter GoToReferences<CR>
 
+""""""" AIRLINE """""""""
+let g:airline#extensions#tabline#enabled = 1

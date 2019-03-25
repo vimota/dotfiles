@@ -27,7 +27,7 @@ alias ll="ls -lA"
 alias gitlogp="git log --pretty=oneline"
 alias hosts="subl /etc/hosts"
 alias brew-home="cd $( brew --prefix )"
-
+alias v="vim"
 # User configuration
 export EDITOR='vim'
 export SSH_KEY_PATH="~/.ssh/rsa_id"
