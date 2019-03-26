@@ -19,5 +19,6 @@
 	autocrlf = false
 	safecrlf = true
 	quotepath = false
+	excludesfile = /Users/vimota/.gitignore-global
 [push]
 	default = tracking
