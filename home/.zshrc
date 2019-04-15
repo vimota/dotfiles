@@ -14,7 +14,7 @@ unsetopt correct_all
 
 # Customize to your needs...
 export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/usr/local/share/npm/bin/
-export PATH=$PATH:/usr/local/share/python:/usr/local/lib/ruby/gems/2.6.0/bin
+export PATH=$PATH:/usr/local/share/python:/usr/local/lib/ruby/gems/2.6.0/bin:/usr/local/share/dotnet
 export PATH=/usr/local/opt/ruby/bin:$PATH
 # Virtualenv and Virtualenvwrappe
 export WORKON_HOME=$HOME/.virtualenvs
@@ -25,7 +25,7 @@ export WORKON_HOME=$HOME/.virtualenvs
 
 alias ll="ls -lA"
 alias gitlogp="git log --pretty=oneline"
-alias hosts="subl /etc/hosts"
+alias hosts="vim /etc/hosts"
 alias brew-home="cd $( brew --prefix )"
 alias v="vim"
 # User configuration
