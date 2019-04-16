@@ -41,6 +41,9 @@ nnoremap <Leader>+ :resize +15<CR>
 nnoremap <Leader>- :vertical resize -15<CR>
 nnoremap <Leader>_ :resize -15<CR>
 
+" Unbind Ctrl-Z to avoid suspending vim
+nnoremap <c-z> <nop>
+
 " Remap code completion to Ctrl+Space {{{2
 inoremap <Nul> <C-x><C-o>
 
