@@ -84,6 +84,7 @@ Plugin 'tomasiser/vim-code-dark'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'FelikZ/ctrlp-py-matcher'
 
 call vundle#end()
 filetype plugin indent on
@@ -116,6 +117,7 @@ nmap ,f :NERDTreeToggle<CR><CR>
 nmap ,<Space> :CtrlP<CR>
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_prompt_mappings = { 'AcceptSelection("h")': ['<c-h>'] }
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " VIM-GITGUTTER "
 set updatetime=250
