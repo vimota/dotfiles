@@ -1,13 +1,7 @@
 config defaultToCurrentScreen true
-# Shows app icons and background apps, spreads icons in the same place.
-config windowHintsShowIcons true
-config windowHintsIgnoreHiddenWindows false
-config windowHintsSpread true
 
-bind e:cmd hint ASDFGHJKLQWERTYUIOPCVBN # use whatever keys you want
-
-alias browser 'Chrome'
-alias editor 'Sublime Text'
+alias browser 'Google Chrome'
+alias editor 'Visual Studio Code'
 
 
 # Abstract positions

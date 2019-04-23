@@ -14,7 +14,7 @@ unsetopt correct_all
 
 # Customize to your needs...
 export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/usr/local/share/npm/bin/
-export PATH=$PATH:/usr/local/share/python:/usr/local/lib/ruby/gems/2.6.0/bin:/usr/local/share/dotnet
+export PATH=$PATH:/usr/local/share/python:/Users/vimota/Library/Python/3.7/bin:/usr/local/lib/ruby/gems/2.6.0/bin:/usr/local/share/dotnet
 export PATH=/usr/local/opt/ruby/bin:$PATH
 # Virtualenv and Virtualenvwrappe
 export WORKON_HOME=$HOME/.virtualenvs
@@ -32,3 +32,9 @@ alias v="vim"
 export EDITOR='vim'
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 export TERM=xterm-256color
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/vimota/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/vimota/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/vimota/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/vimota/google-cloud-sdk/completion.zsh.inc'; fi
