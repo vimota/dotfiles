@@ -29,6 +29,11 @@ set wildmenu                    " enhanced completion"
 
 imap jj <Esc>
 
+" Delete and paste over without copying
+nnoremap <leader>d "_d
+xnoremap <leader>d "_d
+xnoremap <leader>p "_dP
+
 " Easier navigation between panes
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
