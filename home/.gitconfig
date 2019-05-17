@@ -11,6 +11,7 @@
  	type = cat-file -t
  	dump = cat-file -p
 	up = "!git remote update -p; git merge --ff-only @{u}"
+  track = "!git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`"
 [color]
 	ui = auto
 	ui = true
@@ -21,4 +22,4 @@
 	quotepath = false
 	excludesfile = /Users/vimota/.gitignore-global
 [push]
-	default = tracking
+	default = current
