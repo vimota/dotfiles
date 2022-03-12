@@ -8,7 +8,7 @@ HYPHEN_INSENSITIVE="true"
 HIST_STAMPS="yyyy-mm-dd"
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
-plugins=(git zsh-nvm docker kubectl node npm python tmux autojump )
+plugins=(git zsh-nvm node npm python tmux autojump )
 source $ZSH/oh-my-zsh.sh
 # Disable the annoying autocorrect feature
 # # Must come after sourcing oh-my-zsh.sh
@@ -18,8 +18,7 @@ unsetopt correct_all
 # Customize to your needs...
 export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/usr/local/share/npm/bin/
 export PATH=$PATH:/usr/local/share/python:/Users/vimota/Library/Python/3.8/bin:/usr/local/lib/ruby/gems/2.6.0/bin:/usr/local/share/dotnet
-export PATH=/usr/local/opt/ruby/bin:$PATH
-# Virtualenv and Virtualenvwrappe
+export PATH=$PATH:/opt/homebrew/bin
 export WORKON_HOME=$HOME/.virtualenvs
 # Sqlite
 export PATH=/usr/local/opt/sqlite/bin:$PATH
