@@ -16,8 +16,8 @@ unsetopt correct_all
 
 
 # Customize to your needs...
-export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/usr/local/share/npm/bin/
-export PATH=$PATH:/usr/local/share/python:/Users/vimota/Library/Python/3.8/bin:/usr/local/lib/ruby/gems/2.6.0/bin:/usr/local/share/dotnet
+export PATH=~/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/usr/local/share/npm/bin/
+export PATH=$PATH:/usr/local/lib/ruby/gems/2.6.0/bin:/usr/local/share/dotnet
 export PATH=$PATH:/opt/homebrew/bin
 export WORKON_HOME=$HOME/.virtualenvs
 # Sqlite
@@ -42,3 +42,10 @@ if [ -f '/Users/vimota/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/vimota/g
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/vimota/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/vimota/google-cloud-sdk/completion.zsh.inc'; fi
+
+# bun completions
+[ -s "/Users/vimota/.bun/_bun" ] && source "/Users/vimota/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/Users/vimota/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
