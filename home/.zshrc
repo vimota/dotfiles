@@ -20,15 +20,20 @@ export PATH=~/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH=$PATH:/usr/local/lib/ruby/gems/2.6.0/bin:/usr/local/share/dotnet
 export PATH=$PATH:/opt/homebrew/bin
 export WORKON_HOME=$HOME/.virtualenvs
+alias python=python3.11
 # Sqlite
 export PATH=/usr/local/opt/sqlite/bin:$PATH
 export PATH=/usr/local/opt/openjdk@11/bin:$PATH
 
 # Time saving functions/aliases
 #
-
+function gitacp() {
+    git add -A && git commit -m "$1" && git push
+  }
+alias gp="gitacp"
 alias ll="ls -lA"
 alias gitlogp="git log --pretty=oneline"
+git config --global alias.ac '!git add -A && git commit'
 alias hosts="vim /etc/hosts"
 alias brew-home="cd $( brew --prefix )"
 alias v="vim"
@@ -49,3 +54,13 @@ if [ -f '/Users/vimota/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/vi
 # Bun
 export BUN_INSTALL="/Users/vimota/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+
+# Created by `pipx` on 2024-06-04 20:04:25
+export PATH="$PATH:/Users/vimota/.local/bin"
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+# Source Rust / Cargo env
+. "$HOME/.cargo/env"

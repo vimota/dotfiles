@@ -10,3 +10,4 @@ PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
 # Common
 [[ -s "$HOME/.commonrc" ]] && source "$HOME/.commonrc"
+. "$HOME/.cargo/env"
