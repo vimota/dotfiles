@@ -17,8 +17,8 @@ unsetopt correct_all
 
 # Customize to your needs...
 export PATH=~/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/usr/local/share/npm/bin/
+export PATH=~/.npm-global/bin:$PATH
 export PATH=$PATH:/usr/local/lib/ruby/gems/2.6.0/bin:/usr/local/share/dotnet
-export PATH=$PATH:/opt/homebrew/bin
 export WORKON_HOME=$HOME/.virtualenvs
 alias python=python3.11
 # Sqlite
@@ -64,3 +64,39 @@ zstyle ':completion:*' menu select
 fpath+=~/.zfunc
 # Source Rust / Cargo env
 . "$HOME/.cargo/env"
+
+# pnpm
+export PNPM_HOME="/Users/vimota/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+alias claude="/Users/vimota/.claude/local/claude"
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# ripgrep->fzf->vim [QUERY]
+rfv() (
+  RELOAD='reload:rg --column --color=always --smart-case {q} || :'
+  OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
+            vim {1} +{2}     # No selection. Open the current line in Vim.
+          else
+            vim +cw -q {+f}  # Build quickfix list for the selected items.
+          fi'
+  fzf --disabled --ansi --multi \
+      --bind "start:$RELOAD" --bind "change:$RELOAD" \
+      --bind "enter:become:$OPENER" \
+      --bind "ctrl-o:execute:$OPENER" \
+      --bind 'alt-a:select-all,alt-d:deselect-all,ctrl-/:toggle-preview' \
+      --delimiter : \
+      --preview 'bat --theme auto:system --style=full --color=always --highlight-line {2} {1}' \
+      --preview-window '~4,+{2}+4/3,<80(up)' \
+      --query "$*"
+)
+alias cs="rfv" # code search

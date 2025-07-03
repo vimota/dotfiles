@@ -19,6 +19,11 @@
 *.rar
 *.tar
 *.zip
+*.tgz
+*.tar.gz
+*.tbz
+*.tar.bz2
+.git/
 
 # Logs and databases #
 ######################
@@ -31,3 +36,15 @@ ehthumbs.db
 Icon?
 Thumbs.db
 *.swp
+
+# Python Generated #
+####################
+__pycache__
+.venv/
+*.pyc
+*.pyd
+*.pyo
+
+# AI Tools #
+# ##########
+./claude
