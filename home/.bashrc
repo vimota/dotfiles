@@ -11,3 +11,8 @@ PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 # Common
 [[ -s "$HOME/.commonrc" ]] && source "$HOME/.commonrc"
 . "$HOME/.cargo/env"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/vimota/.cache/lm-studio/bin"
+# End of LM Studio CLI section
+

@@ -1,4 +1,8 @@
 # ZSH Config
+DISABLE_AUTO_UPDATE="true"
+DISABLE_MAGIC_FUNCTIONS="true"
+ZSH_DISABLE_COMPFIX="true"
+DISABLE_COMPINIT=true
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="miloshadzic"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%}%{%G⚡}%{$reset_color%}"
@@ -8,7 +12,7 @@ HYPHEN_INSENSITIVE="true"
 HIST_STAMPS="yyyy-mm-dd"
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
-plugins=(git zsh-nvm node npm python tmux autojump )
+plugins=(git tmux autojump )
 source $ZSH/oh-my-zsh.sh
 # Disable the annoying autocorrect feature
 # # Must come after sourcing oh-my-zsh.sh
@@ -42,15 +46,6 @@ export EDITOR='vim'
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 export TERM=xterm-256color
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/vimota/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/vimota/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/vimota/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/vimota/google-cloud-sdk/completion.zsh.inc'; fi
-
-# bun completions
-[ -s "/Users/vimota/.bun/_bun" ] && source "/Users/vimota/.bun/_bun"
-
 # Bun
 export BUN_INSTALL="/Users/vimota/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
@@ -59,9 +54,15 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # Created by `pipx` on 2024-06-04 20:04:25
 export PATH="$PATH:/Users/vimota/.local/bin"
 
-autoload -Uz compinit
-zstyle ':completion:*' menu select
+# Smart compinit caching for faster startup
 fpath+=~/.zfunc
+autoload -Uz compinit
+if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
+    compinit
+else
+   compinit -C
+fi
+zstyle ':completion:*' menu select
 # Source Rust / Cargo env
 . "$HOME/.cargo/env"
 
@@ -73,8 +74,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 alias claude="/Users/vimota/.claude/local/claude"
-
-fpath+=~/.zfunc; autoload -Uz compinit; compinit
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
@@ -100,3 +99,10 @@ rfv() (
       --query "$*"
 )
 alias cs="rfv" # code search
+# Add viomta/utils to PATH
+export PATH="$PATH:/Users/vimota/code/utils"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/vimota/.cache/lm-studio/bin"
+# End of LM Studio CLI section
+

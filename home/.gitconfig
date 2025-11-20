@@ -14,6 +14,24 @@
   track = "!git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`"
 	am = !git add -A && git commit
 	ac = !git add -A && git commit
+	# checkout by index (from `git br`) or pass-through to normal checkout
+	co = "!f() { \
+		if [ $# -gt 0 ]; then \
+			case \"$1\" in \
+				(*[!0-9]*|'') git checkout \"$@\" ;; \
+				(*) \
+					branch=$(git branch --format='%(refname:short)' | sed -n \"${1}p\"); \
+					[ -n \"$branch\" ] || { echo \"No branch at index $1\" >&2; return 1; }; \
+					shift; \
+					git checkout \"$branch\" \"$@\" ;; \
+			esac; \
+		else \
+			git checkout; \
+		fi; \
+	}; f"
+
+	# numbered local branches (for use with `git co <n>`)
+	br = "!git branch --format='%(refname:short)' | nl -w1 -s' '"
 [color]
 	ui = auto
 	ui = true

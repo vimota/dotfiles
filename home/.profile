@@ -27,3 +27,8 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 . "$HOME/.cargo/env"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/vimota/.cache/lm-studio/bin"
+# End of LM Studio CLI section
+
