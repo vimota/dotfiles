@@ -6,3 +6,8 @@
 export PATH="$PATH:/Users/vimota/.cache/lm-studio/bin"
 # End of LM Studio CLI section
 
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/vimota/.lmstudio/bin"
+# End of LM Studio CLI section
+

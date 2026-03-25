@@ -1,5 +1,6 @@
 # Gets executed for login shells
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# eval "$(/opt/homebrew/bin/brew shellenv)"
+eval $(/opt/homebrew/bin/brew shellenv bash)
 [[ -s "$HOME/.zshrc" ]] && source "$HOME/.zshrc"
 
 

@@ -23,6 +23,7 @@ unsetopt correct_all
 export PATH=~/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/usr/local/share/npm/bin/
 export PATH=~/.npm-global/bin:$PATH
 export PATH=$PATH:/usr/local/lib/ruby/gems/2.6.0/bin:/usr/local/share/dotnet
+export PATH=/opt/homebrew/opt/postgresql@15/bin:$PATH
 export WORKON_HOME=$HOME/.virtualenvs
 alias python=python3.11
 # Sqlite
@@ -73,7 +74,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-alias claude="/Users/vimota/.claude/local/claude"
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
@@ -102,7 +102,22 @@ alias cs="rfv" # code search
 # Add viomta/utils to PATH
 export PATH="$PATH:/Users/vimota/code/utils"
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"
+[ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
+
+# Fix to make cairo library work - used in Planar.
+export DYLD_FALLBACK_LIBRARY_PATH="/opt/homebrew/lib:${DYLD_FALLBACK_LIBRARY_PATH}"
+
+
 # Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/vimota/.cache/lm-studio/bin"
+export PATH="$PATH:/Users/vimota/.lmstudio/bin"
 # End of LM Studio CLI section
 
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
+
+# Bind key to delete only left of cursor
+bindkey -M emacs '^U' backward-kill-line
+bindkey -M viins '^U' backward-kill-line
+bindkey -M main '^U' backward-kill-line
