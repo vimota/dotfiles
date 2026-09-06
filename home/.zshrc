@@ -12,7 +12,7 @@ HYPHEN_INSENSITIVE="true"
 HIST_STAMPS="yyyy-mm-dd"
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
-plugins=(git tmux autojump )
+plugins=(git autojump )
 source $ZSH/oh-my-zsh.sh
 # Disable the annoying autocorrect feature
 # # Must come after sourcing oh-my-zsh.sh
@@ -36,9 +36,9 @@ function gitacp() {
     git add -A && git commit -m "$1" && git push
   }
 alias gp="gitacp"
+alias gco='git checkout'
 alias ll="ls -lA"
 alias gitlogp="git log --pretty=oneline"
-git config --global alias.ac '!git add -A && git commit'
 alias hosts="vim /etc/hosts"
 alias brew-home="cd $( brew --prefix )"
 alias v="vim"
@@ -121,3 +121,8 @@ export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 bindkey -M emacs '^U' backward-kill-line
 bindkey -M viins '^U' backward-kill-line
 bindkey -M main '^U' backward-kill-line
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
+# sentry
+fpath=("/Users/vimota/.local/share/zsh/site-functions" $fpath)

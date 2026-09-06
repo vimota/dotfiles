@@ -1,8 +1,7 @@
 # Gets executed for login shells
 # eval "$(/opt/homebrew/bin/brew shellenv)"
 eval $(/opt/homebrew/bin/brew shellenv bash)
-[[ -s "$HOME/.zshrc" ]] && source "$HOME/.zshrc"
+# [[ -s "$HOME/.zshrc" ]] && source "$HOME/.zshrc"
 
-
-# Created by `pipx` on 2024-06-04 20:04:25
-export PATH="$PATH:/Users/vimota/.local/bin"
+export PNPM_HOME="$HOME/Library/pnpm"
+export PATH="$PNPM_HOME:$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
