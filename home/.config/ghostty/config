@@ -1,0 +1,26 @@
+theme = light:Builtin Light,dark:Builtin Dark
+
+# Map Ctrl+; to send Ctrl+Z (0x1a), matching iTerm behavior for tmux
+keybind = ctrl+;=text:\x1a
+keybind = cmd+enter=text:\n
+keybind = alt+backspace=text:\x1b\x7f
+
+
+font-family = Monaco
+font-size = 12
+
+# thicker cursor (block)
+cursor-style = block
+cursor-style-blink = false
+
+# Stop Ghostty's shell integration from forcing a bar cursor at the prompt
+shell-integration-features = no-cursor
+
+# Physical QWERTY bracket keys for Dvorak-QWERTY Command tab switching
+# https://github.com/ghostty-org/ghostty/discussions/11765
+keybind = cmd+shift+BracketLeft=previous_tab
+keybind = cmd+shift+BracketRight=next_tab
+# QWERTY W for standard close pane/tab behavior
+keybind = cmd+KeyW=close_surface
+
+macos-icon = glass

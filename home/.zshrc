@@ -2,33 +2,28 @@
 DISABLE_AUTO_UPDATE="true"
 DISABLE_MAGIC_FUNCTIONS="true"
 ZSH_DISABLE_COMPFIX="true"
-DISABLE_COMPINIT=true
 export ZSH=$HOME/.oh-my-zsh
+ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/oh-my-zsh"
+mkdir -p "$ZSH_CACHE_DIR"
+export ZSH_COMPDUMP="$ZSH_CACHE_DIR/.zcompdump-${HOST%%.*}-${ZSH_VERSION}"
 ZSH_THEME="miloshadzic"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%}%{%G⚡}%{$reset_color%}"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 HYPHEN_INSENSITIVE="true"
 HIST_STAMPS="yyyy-mm-dd"
-export NVM_LAZY_LOAD=true
-export NVM_COMPLETION=true
-plugins=(git autojump )
-source $ZSH/oh-my-zsh.sh
+# Load NVM functions/completion now; select Node on first use.
+export NVM_DIR="$HOME/.nvm"
+NVM_HOMEBREW="/opt/homebrew/opt/nvm"
+NVM_LAZY=1
+NVM_LAZY_CMD=(npx pnpm pnpx corepack)
+plugins=(git tmux autojump nvm)
+fpath=("$HOME/.zfunc" "$HOME/.local/share/zsh/site-functions" $fpath)
+source "$ZSH/oh-my-zsh.sh"
 # Disable the annoying autocorrect feature
 # # Must come after sourcing oh-my-zsh.sh
 unsetopt correct_all
 
-
-# Customize to your needs...
-export PATH=~/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/usr/local/share/npm/bin/
-export PATH=~/.npm-global/bin:$PATH
-export PATH=$PATH:/usr/local/lib/ruby/gems/2.6.0/bin:/usr/local/share/dotnet
-export PATH=/opt/homebrew/opt/postgresql@15/bin:$PATH
-export WORKON_HOME=$HOME/.virtualenvs
-alias python=python3.11
-# Sqlite
-export PATH=/usr/local/opt/sqlite/bin:$PATH
-export PATH=/usr/local/opt/openjdk@11/bin:$PATH
 
 # Time saving functions/aliases
 #
@@ -42,38 +37,7 @@ alias gitlogp="git log --pretty=oneline"
 alias hosts="vim /etc/hosts"
 alias brew-home="cd $( brew --prefix )"
 alias v="vim"
-# User configuration
-export EDITOR='vim'
-export SSH_KEY_PATH="~/.ssh/rsa_id"
-export TERM=xterm-256color
-
-# Bun
-export BUN_INSTALL="/Users/vimota/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-
-# Created by `pipx` on 2024-06-04 20:04:25
-export PATH="$PATH:/Users/vimota/.local/bin"
-
-# Smart compinit caching for faster startup
-fpath+=~/.zfunc
-autoload -Uz compinit
-if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
-    compinit
-else
-   compinit -C
-fi
 zstyle ':completion:*' menu select
-# Source Rust / Cargo env
-. "$HOME/.cargo/env"
-
-# pnpm
-export PNPM_HOME="/Users/vimota/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
@@ -99,30 +63,8 @@ rfv() (
       --query "$*"
 )
 alias cs="rfv" # code search
-# Add viomta/utils to PATH
-export PATH="$PATH:/Users/vimota/code/utils"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"
-[ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
-
-# Fix to make cairo library work - used in Planar.
-export DYLD_FALLBACK_LIBRARY_PATH="/opt/homebrew/lib:${DYLD_FALLBACK_LIBRARY_PATH}"
-
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/vimota/.lmstudio/bin"
-# End of LM Studio CLI section
-
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
-
 
 # Bind key to delete only left of cursor
 bindkey -M emacs '^U' backward-kill-line
 bindkey -M viins '^U' backward-kill-line
 bindkey -M main '^U' backward-kill-line
-
-fpath+=~/.zfunc; autoload -Uz compinit; compinit
-
-# sentry
-fpath=("/Users/vimota/.local/share/zsh/site-functions" $fpath)
