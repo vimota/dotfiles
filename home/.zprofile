@@ -12,8 +12,8 @@ export DYLD_FALLBACK_LIBRARY_PATH="/opt/homebrew/lib${DYLD_FALLBACK_LIBRARY_PATH
 # the order below.
 typeset -U path PATH
 path=(
-  "$PNPM_HOME"
   "$PNPM_HOME/bin"
+  "$PNPM_HOME"
   "$HOME/.npm-global/bin"
   "$HOME/.local/bin"
   "$HOME/.cargo/bin"

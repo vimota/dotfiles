@@ -12,11 +12,9 @@ ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 HYPHEN_INSENSITIVE="true"
 HIST_STAMPS="yyyy-mm-dd"
-# Load NVM functions/completion now; select Node on first use.
+# Load NVM and select the default Node version when the shell starts.
 export NVM_DIR="$HOME/.nvm"
 NVM_HOMEBREW="/opt/homebrew/opt/nvm"
-NVM_LAZY=1
-NVM_LAZY_CMD=(npx pnpm pnpx corepack)
 plugins=(git tmux autojump nvm)
 fpath=("$HOME/.zfunc" "$HOME/.local/share/zsh/site-functions" $fpath)
 source "$ZSH/oh-my-zsh.sh"
